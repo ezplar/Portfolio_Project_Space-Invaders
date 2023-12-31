@@ -120,22 +120,30 @@ while is_on:
     for wl1 in barricade_wall.bar1:
         if space_defender.laser.distance(wl1) < 20:
             barricade_wall.destroy_barricade(wl1)
+            # modified space laser collision to barricade/reloads laser upon barricade hit
+            space_defender.reload()
             print("destroy barricade")
 
         for msl_test in alien_invaders.missile_list:
             if msl_test.distance(wl1) < 20:
                 barricade_wall.destroy_barricade(wl1)
+                # modified alien missile collision to barricade/reloads missile upon barricade hit
+                alien_invaders.missile_barricade_collide(msl_test)
                 print("destroy barricade by alien")
 
 
     for wl2 in barricade_wall.bar2:
         if space_defender.laser.distance(wl2) < 20:
             barricade_wall.destroy_barricade(wl2)
+            # modified space laser collision to barricade/reloads laser upon barricade hit
+            space_defender.reload()
             print("destroy barricade")
 
         for msl_test in alien_invaders.missile_list:
             if msl_test.distance(wl2) < 20:
                 barricade_wall.destroy_barricade(wl2)
+                # modified alien missile collision to barricade/reloads missile upon barricade hit
+                alien_invaders.missile_barricade_collide(msl_test)
                 print("destroy barricade by alien")
 
     #Gameover condition

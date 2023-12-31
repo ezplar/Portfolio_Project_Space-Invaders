@@ -149,3 +149,8 @@ class Aliens(Turtle):
             index.ht()
             self.missile_list.remove(index)
 
+    def missile_barricade_collide(self,index):
+        if index in self.missile_list:
+            index.ht()
+            self.missile_list.remove(index)
+
